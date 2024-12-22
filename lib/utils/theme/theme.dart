@@ -8,4 +8,9 @@ class AppTheme {
     primaryColor: Colors.blueGrey,
     scaffoldBackgroundColor: Colors.white,
   );
+  static ThemeData darkTheme = ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.light,
+      scaffoldBackgroundColor: Colors.white,
+      primaryColor: Colors.blueGrey);
 }
