@@ -22,4 +22,5 @@ class AppbarTheme {
       actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
       titleTextStyle: TextStyle(
           fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black));
+          
 }
