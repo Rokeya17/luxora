@@ -7,6 +7,8 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: Colors.blueGrey,
     scaffoldBackgroundColor: Colors.white,
+  
+
   );
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
