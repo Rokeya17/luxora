@@ -21,4 +21,4 @@ class Sizes {
   static  const double fontSizeLg =24.0;
   static  const double fontSizeXl =32.0;
 
-}
+} 
