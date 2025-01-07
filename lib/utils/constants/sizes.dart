@@ -21,4 +21,12 @@ class Sizes {
   static  const double fontSizeLg =24.0;
   static  const double fontSizeXl =32.0;
 
-} 
+
+  //button
+  static const double buttonHeight = 18.0;
+  static const double buttonWidth = 120.0;
+  static const double buttonRadius = 12.0;
+  static double buttonElevation = 4.0;
+                            
+//appbar
+static const double appbarHeight = 56.0;                                                                                                                                                                                                                                                   } 
