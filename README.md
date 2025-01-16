@@ -1,4 +1,4 @@
-# Flutter eCommerce App with Firebase
+# Flutter eCommerce App(Luxora) with Firebase
 
 ## Overview
 The **Flutter eCommerce App with Firebase** is a high-performance, cross-platform solution for building feature-rich eCommerce applications. Integrated with **Flutter** and **Firebase**, this app allows developers to quickly build scalable, customizable apps for both **Android** and **iOS**.
