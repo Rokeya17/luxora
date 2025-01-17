@@ -1,0 +1,7 @@
+Stack is a widget that allows you to arrange multiple widgets in an overlapping or layered manner.
+It is used when you need to place widgets on top of each other.
+
+//Key Features of Stack:
+ 1. Overlapping Layout: Stack enables widgets to overlap.
+ 2. Positioning Support: Child widgets inside a Stack can be placed at specific positions using the Positioned widget.
+ 3. Alignment: The alignment property is used to position widgets within the Stack.

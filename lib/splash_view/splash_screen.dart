@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luxora/utils/constants/appimages.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -6,7 +7,19 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [Text('hi')],),
+      backgroundColor: Colors.blueGrey,
+      body: Stack(
+        children: [
+          Center(
+            child: Image.asset(
+              AppImages.appLogo, 
+              height: 150, 
+              width: 150, 
+              fit: BoxFit.contain, 
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
