@@ -1,3 +1,3 @@
-class AppImages {
-  static const String  appLogo ="assets\images\logo.jpg";
-}
+// class AppImages {
+//   static const String  appLogo ='D:\projects\luxora\assets\images\logo.png';
+// }

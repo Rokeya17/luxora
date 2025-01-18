@@ -13,7 +13,7 @@ dependencies:
    get: ^4.6.6
    pretty_http_logger: ^1.0.4
    shared_preferences: ^2.3.5
-   http: ^1.2.2
+  
    flutter_animated_splash: ^0.0.10
    flutter_svg: ^2.0.17
 
@@ -24,5 +24,4 @@ dev_dependencies:
 
 flutter:
    uses-material-design: true
-   assets:
-    - assets/images/
+   
