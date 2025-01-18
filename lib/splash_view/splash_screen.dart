@@ -8,12 +8,14 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SigninView()));});
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const SigninView()));
+    });
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Stack(
         children: [
-          
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -26,9 +28,7 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          
-        const  Center(
+          const Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -44,9 +44,9 @@ class SplashScreen extends StatelessWidget {
                 //     ),
                 //   ),
                 // ),
-                 SizedBox(height: 20.0),
-                
-                 Text(
+                SizedBox(height: 20.0),
+
+                Text(
                   'Luxora',
                   style: TextStyle(
                     fontSize: 36.0,
@@ -55,9 +55,9 @@ class SplashScreen extends StatelessWidget {
                     letterSpacing: 2.0,
                   ),
                 ),
-                 SizedBox(height: 10.0),
-                
-                 Text(
+                SizedBox(height: 10.0),
+
+                Text(
                   'Luxora: For the Love of Luxury.',
                   style: TextStyle(
                     fontSize: 16.0,
@@ -68,15 +68,13 @@ class SplashScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          
-         const Positioned(
+          const Positioned(
             bottom: 30.0,
             left: 0,
             right: 0,
             child: Center(
               child: Column(
-                children:  [
+                children: [
                   CircularProgressIndicator(
                     color: Colors.white,
                   ),
@@ -97,4 +95,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
