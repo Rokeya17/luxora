@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:luxora/signin/controller/signin_controller.dart';
+import 'package:luxora/signup/view/signup_view.dart';
 
 import '../../utils/constants/appimages.dart';
 
@@ -120,7 +121,7 @@ class SigninView extends StatelessWidget {
                 children: [
                   const Text("Don't have an account?"),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {Get.to(()=> const SignupView());},
                     child: const Text(
                       'Sign Up',
                       style: TextStyle(
