@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:luxora/signin/controller/signin_controller.dart';
-import 'package:luxora/signin/model/signin_model.dart';
+
+import '../../utils/constants/appimages.dart';
 
 //GetView<SigninController>
 class SigninView extends StatelessWidget {
@@ -20,17 +21,17 @@ class SigninView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Logo Section
-              // Container(
-              //   height: 120.0,
-              //   width: 120.0,
-              //   decoration: const BoxDecoration(
-              //     shape: BoxShape.circle,
-              //     image: DecorationImage(
-              //       image: AssetImage(''),
-              //       fit: BoxFit.cover,
-              //     ),
-              //   ),
-              // ),
+              Container(
+                height: 120.0,
+                width: 120.0,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage(AppImages.appLogo),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
               const SizedBox(height: 20.0),
               const Text(
                 "Welcome Back!",
@@ -98,7 +99,7 @@ class SigninView extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                  ):Center(child: CircularProgressIndicator(),)
+                  ):const Center(child: CircularProgressIndicator(),)
                 );
               }),
 

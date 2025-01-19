@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:luxora/signin/view/signin_view.dart';
+import 'package:luxora/utils/constants/appimages.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -28,25 +29,25 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Center(
+           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Logo
-                // Container(
-                //   height: 100.0,
-                //   width: 100.0,
-                //   decoration: const BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     image: DecorationImage(
-                //       image: AssetImage(''), /// pub and assets issue
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-                SizedBox(height: 20.0),
+                Container(
+                  height: 100.0,
+                  width: 100.0,
+                  decoration:const  BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(AppImages.appLogo), 
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+               const SizedBox(height: 20.0),
 
-                Text(
+               const Text(
                   'Luxora',
                   style: TextStyle(
                     fontSize: 36.0,
@@ -55,9 +56,9 @@ class SplashScreen extends StatelessWidget {
                     letterSpacing: 2.0,
                   ),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
 
-                Text(
+                const Text(
                   'Luxora: For the Love of Luxury.',
                   style: TextStyle(
                     fontSize: 16.0,

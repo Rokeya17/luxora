@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class SigninController extends GetxController {
     });
     if(response.statusCode==200)
     {
-     signInModel=SignInModel.fromJson(response.body as Map<String,dynamic>);
+     signInModel=SignInModel.fromJson(jsonDecode(response.body));
      Get.snackbar('ok', 'Successful');
      
     }else{
@@ -36,8 +37,5 @@ class SigninController extends GetxController {
 
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
+
 }

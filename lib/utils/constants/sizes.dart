@@ -7,7 +7,7 @@ class Sizes {
   static  const double paddingXl =32.0;
 
   //icon
-   static  const double IconXs =4.0;
+  static  const double IconXs =4.0;
   static  const double IconSm =8.0;
   static  const double IconMd =16.0;
   static  const double IconLg =24.0;
@@ -15,7 +15,7 @@ class Sizes {
 
 
 //font 
-   static  const double fontSizeXs =4.0;
+  static  const double fontSizeXs =4.0;
   static  const double fontSizeSm =8.0;
   static  const double fontSizeMd =16.0;
   static  const double fontSizeLg =24.0;
