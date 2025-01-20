@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:luxora/component/textfromfield.dart';
+import 'package:luxora/home/view/homeview.dart';
 import 'package:luxora/signin/view/signin_view.dart';
 import 'package:luxora/signup/controller/signup_controller.dart';
 
@@ -66,12 +67,13 @@ class _SignupViewState extends State<SignupView> {
                       const PrimaryTextFormField(
                         labelText: 'Password',
                         obscureText: true,
-                        suffixIcon: const Icon(Icons.visibility),
+                        suffixIcon: Icon(Icons.visibility),
                       ),
                       const SizedBox(height: 24),
                       ElevatedButton(
                         onPressed: () async {
                           await controller.signup();
+                          Get.to(()=>const Homeview());
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(double.infinity, 50),

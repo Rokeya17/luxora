@@ -48,7 +48,7 @@ class SignupController extends GetxController {
        signUpModel = SignUpModel.fromJson(jsonDecode(response.body)); 
       isLoading = false;
       update();
-      Get.snackbar('success', 'OTP send to your email');
+      Get.snackbar('success', 'successfully logged in');
       return true;
     } else {
       isLoading = false;

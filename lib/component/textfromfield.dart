@@ -12,7 +12,7 @@ class PrimaryTextFormField extends StatelessWidget {
   final Function(String)? onChanged;
 
   const PrimaryTextFormField({
-    Key? key,
+    super.key,
     required this.labelText,
     this.hintText,
     this.controller,
@@ -22,7 +22,7 @@ class PrimaryTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.validator,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

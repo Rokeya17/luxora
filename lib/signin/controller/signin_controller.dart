@@ -9,11 +9,11 @@ import 'package:luxora/signin/model/signin_model.dart';
 import 'package:luxora/utils/constants/urls.dart';
 
 class SigninController extends GetxController {
-  TextEditingController emailController = TextEditingController(text: 'rabbilidlc@gmail.com');
-  TextEditingController passwordController = TextEditingController(text: '123');
+  TextEditingController emailController = TextEditingController(text: 'rabbil@rabb.com');
+  TextEditingController passwordController = TextEditingController(text: '1234');
   ApiServices apiServices = ApiServices();
   bool isLoading = false;
-  SignInModel? signInModel ;
+  SigninModel? signinModel ;
 
 
   Future<void> signIn() async {
@@ -25,7 +25,7 @@ class SigninController extends GetxController {
     });
     if(response.statusCode==200)
     {
-     signInModel=SignInModel.fromJson(jsonDecode(response.body));
+     signinModel=SigninModel.fromJson(jsonDecode(response.body));
      Get.snackbar('ok', 'Successful');
      
     }else{

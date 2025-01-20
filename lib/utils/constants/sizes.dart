@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class Sizes {
   //padding and margin          
   static  const double paddingXs =4.0;
