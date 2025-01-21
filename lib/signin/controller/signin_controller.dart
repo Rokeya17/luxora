@@ -7,6 +7,7 @@ import 'package:luxora/data/services/api_response.dart';
 import 'package:luxora/data/services/api_services.dart';
 import 'package:luxora/signin/model/signin_model.dart';
 import 'package:luxora/utils/constants/urls.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninController extends GetxController {
   TextEditingController emailController = TextEditingController(text: 'rabbil@rabb.com');
@@ -36,6 +37,9 @@ class SigninController extends GetxController {
 
 
   }
+
+ 
+
 
 
 }

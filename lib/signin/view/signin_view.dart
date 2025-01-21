@@ -1,18 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:luxora/home/view/homeview.dart';
 import 'package:luxora/signin/controller/signin_controller.dart';
 import 'package:luxora/signup/view/signup_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../utils/constants/appimages.dart';
 
 //GetView<SigninController>
-class SigninView extends StatelessWidget {
+class SigninView extends StatefulWidget {
   const SigninView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    SigninController controller = Get.find<SigninController>();
+  State<SigninView> createState() => _SigninViewState();
+}
 
+class _SigninViewState extends State<SigninView> {
+  SigninController controller = Get.find<SigninController>();
+
+  
+  Future<void> getToken() async {
+    final Future<SharedPreferences> sP = SharedPreferences.getInstance();
+    return getToken();
+  }
+
+  void checkLoginState() async {
+    super.initState();
+    getToken();
+    Get.to(() => const Homeview());
+    }
+
+  @override
+  void initState() {
+    super.initState();
+    checkLoginState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -81,27 +106,31 @@ class SigninView extends StatelessWidget {
               const SizedBox(height: 20.0),
               GetBuilder<SigninController>(builder: (controller) {
                 return SizedBox(
-                  width: double.infinity,
-                  child:!controller.isLoading ? ElevatedButton(
-                    onPressed: ()async {
-                      await controller.signIn();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                    child: const Text(
-                      'Log In',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ):const Center(child: CircularProgressIndicator(),)
-                );
+                    width: double.infinity,
+                    child: !controller.isLoading
+                        ? ElevatedButton(
+                            onPressed: () async {
+                              await controller.signIn();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 16.0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                            ),
+                            child: const Text(
+                              'Log In',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          )
+                        : const Center(
+                            child: CircularProgressIndicator(),
+                          ));
               }),
 
               const SizedBox(height: 20.0),
@@ -121,7 +150,9 @@ class SigninView extends StatelessWidget {
                 children: [
                   const Text("Don't have an account?"),
                   TextButton(
-                    onPressed: () {Get.to(()=> const SignupView());},
+                    onPressed: () {
+                      Get.to(() => const SignupView());
+                    },
                     child: const Text(
                       'Sign Up',
                       style: TextStyle(
