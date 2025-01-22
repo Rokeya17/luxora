@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
+import 'package:get/get.dart';
+import 'package:luxora/home/view/homeview.dart';
+import 'package:luxora/signin/controller/authcontroller.dart';
 import 'package:luxora/signin/view/signin_view.dart';
 import 'package:luxora/utils/constants/appimages.dart';
 
@@ -8,8 +9,28 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<SplashScreen> createState() => _SplashScreenState();
+}
 
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _navigateToNextScreen();
+  }
+
+  Future<void> _navigateToNextScreen() async {
+    final authController = Get.find<Authcontroller>();
+    final token = await authController.getToken();
+    if (token != null) {
+      Get.offAll(() => const Homeview());
+    } else {
+      Get.offAll(() => const SigninView());
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Stack(
@@ -43,7 +64,6 @@ class SplashScreen extends StatefulWidget {
                   ),
                 ),
                 const SizedBox(height: 20.0),
-
                 const Text(
                   'Luxora',
                   style: TextStyle(
@@ -54,7 +74,6 @@ class SplashScreen extends StatefulWidget {
                   ),
                 ),
                 const SizedBox(height: 10.0),
-
                 const Text(
                   'Luxora: For the Love of Luxury.',
                   style: TextStyle(

@@ -17,7 +17,6 @@ class SigninController extends GetxController {
   ApiServices apiServices = ApiServices();
   bool isLoading = false;
   SigninModel? signinModel;
-  Authcontroller? authcontroller;
 
   Future<void> signIn() async {
     isLoading = true;
@@ -31,11 +30,8 @@ class SigninController extends GetxController {
     if (response.statusCode == 200) {
       signinModel = SigninModel.fromJson(jsonDecode(response.body));
       Get.snackbar('ok', 'Successful');
-      await authcontroller?.setToken(token: signinModel!.token!);
-      Get.to(() => Homeview(
-            token: signinModel!.token!,
-            data: signinModel!,
-          ));
+      await Get.find<Authcontroller>().setToken(token: signinModel!.token!);
+      Get.to(() => const Homeview());
     } else {
       Get.snackbar('Error', 'Something went wrong');
     }
