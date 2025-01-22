@@ -18,24 +18,6 @@ class SigninView extends StatefulWidget {
 class _SigninViewState extends State<SigninView> {
   SigninController controller = Get.find<SigninController>();
 
-  
-  Future<void> getToken() async {
-    final Future<SharedPreferences> sP = SharedPreferences.getInstance();
-    return getToken();
-  }
-
-  void checkLoginState() async {
-    super.initState();
-    getToken();
-    Get.to(() => const Homeview());
-    }
-
-  @override
-  void initState() {
-    super.initState();
-    checkLoginState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

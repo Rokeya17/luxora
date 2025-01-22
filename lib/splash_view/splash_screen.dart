@@ -4,15 +4,12 @@ import 'dart:async';
 import 'package:luxora/signin/view/signin_view.dart';
 import 'package:luxora/utils/constants/appimages.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const SigninView()));
-    });
+
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Stack(
@@ -29,7 +26,7 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
           ),
-           Center(
+          Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -37,17 +34,17 @@ class SplashScreen extends StatelessWidget {
                 Container(
                   height: 100.0,
                   width: 100.0,
-                  decoration:const  BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage(AppImages.appLogo), 
+                      image: AssetImage(AppImages.appLogo),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-               const SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
 
-               const Text(
+                const Text(
                   'Luxora',
                   style: TextStyle(
                     fontSize: 36.0,

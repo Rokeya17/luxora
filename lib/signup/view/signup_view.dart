@@ -73,7 +73,7 @@ class _SignupViewState extends State<SignupView> {
                       ElevatedButton(
                         onPressed: () async {
                           await controller.signup();
-                          Get.to(()=>const Homeview());
+                          // Get.to(()=> Homeview(token: '',));
                         },
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(double.infinity, 50),

@@ -1,45 +1,45 @@
-
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:luxora/data/services/api_response.dart';
 import 'package:luxora/data/services/api_services.dart';
+import 'package:luxora/home/view/homeview.dart';
+import 'package:luxora/signin/controller/authcontroller.dart';
 import 'package:luxora/signin/model/signin_model.dart';
 import 'package:luxora/utils/constants/urls.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninController extends GetxController {
-  TextEditingController emailController = TextEditingController(text: 'rabbil@rabb.com');
-  TextEditingController passwordController = TextEditingController(text: '1234');
+  TextEditingController emailController =
+      TextEditingController(text: 'rabbil@rabb.com');
+  TextEditingController passwordController =
+      TextEditingController(text: '1234');
   ApiServices apiServices = ApiServices();
   bool isLoading = false;
-  SigninModel? signinModel ;
-
+  SigninModel? signinModel;
+  Authcontroller? authcontroller;
 
   Future<void> signIn() async {
-    isLoading =true;
+    isLoading = true;
     update();
-   final ApiResponse response = await   apiServices.post(url: '$baseurl/login', body: {
-      'email': emailController.text.trim(),
-      'password': passwordController.text
-    });
-    if(response.statusCode==200)
-    {
-     signinModel=SigninModel.fromJson(jsonDecode(response.body));
-     Get.snackbar('ok', 'Successful');
-     
-    }else{
+    final ApiResponse response = await apiServices.post(
+        url: '$baseurl/login',
+        body: {
+          'email': emailController.text.trim(),
+          'password': passwordController.text
+        });
+    if (response.statusCode == 200) {
+      signinModel = SigninModel.fromJson(jsonDecode(response.body));
+      Get.snackbar('ok', 'Successful');
+      await authcontroller?.setToken(token: signinModel!.token!);
+      Get.to(() => Homeview(
+            token: signinModel!.token!,
+            data: signinModel!,
+          ));
+    } else {
       Get.snackbar('Error', 'Something went wrong');
     }
     isLoading = false;
     update();
-
-
   }
-
- 
-
-
-
 }
