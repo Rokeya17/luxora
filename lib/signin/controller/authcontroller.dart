@@ -3,7 +3,7 @@ import 'package:luxora/signin/view/signin_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Authcontroller extends GetxController {
-  // ================================= get method ===========================================//
+  // ============================ get method ===========================================//
   Future<String?> getToken() async {
     final SharedPreferences sP = await SharedPreferences.getInstance();
     String? accessToken = sP.getString("accesstoken");
